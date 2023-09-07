@@ -35,7 +35,7 @@ public class User {
         return "User{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", address=" + address +
+                ", address=" + address.toString() +
                 '}';
     }
 }
