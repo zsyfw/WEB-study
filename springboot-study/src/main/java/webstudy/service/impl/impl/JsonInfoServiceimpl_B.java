@@ -20,14 +20,14 @@ import webstudy.service.impl.JsonInfoService;
 //声明的bean可以通过(value = "bean_name")或("bean_name")指定名字,否则默认为首字母小写的类名
 //@Primary//当同一接口有两个类时,可以通过在要注入的类加上@Primary指定
 @Service        //@Component的衍生注解，常用于处理业务逻辑的类
-public class JsonInfoServiceimpl implements JsonInfoService {
+public class JsonInfoServiceimpl_B implements JsonInfoService {
 
     @Autowired   //运行时，IOC容器会提供该类型的bean对象，并赋值给该变量,不用再手动实例化对象----依赖注入(此方法依赖JsonInfoDao类)
     private JsonInfoDao jsonInfoDao;
     @Override
     public User userinfo(User user) {
-       User updateUser = jsonInfoDao.userinfo(user);
-       updateUser.setName("更改后的名字");
+        User updateUser = jsonInfoDao.userinfo(user);
+        updateUser.setName("更改后的名字B");
         return updateUser;
     }
 }
