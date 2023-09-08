@@ -9,6 +9,7 @@ import webstudy.Result.Result;
 import webstudy.service.impl.JsonInfoService;
 import webstudy.service.impl.impl.JsonInfoServiceimpl;
 
+import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -58,6 +59,7 @@ public class ServiceController {
     }
     @Qualifier("jsonInfoServiceimpl_B")//当要注入的接口类下有多个bean时，可通过@Qualifier指定也接收的类
     @Autowired     //运行时，IOC容器会提供该类型的bean对象，并赋值给该变量,不用再手动实例化对象----依赖注入(此方法依赖JsonInfoService类)
+    //@Resource(name = "jsonInfoServiceimpl_B")//也可以通过@Resource指定bean，使用Resource时不需要搭配Autowired使用
     private JsonInfoService jsonInfoService;
     @RequestMapping("/JsonInfo")       //json型数据接收时需要在前面加上@RequestBody将数据封装到对象中
     public Result JsonInfo(@RequestBody User user){
