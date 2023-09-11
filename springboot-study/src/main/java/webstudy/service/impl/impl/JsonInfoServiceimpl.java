@@ -27,7 +27,7 @@ public class JsonInfoServiceimpl implements JsonInfoService {
     @Override
     public User userinfo(User user) {
        User updateUser = jsonInfoDao.userinfo(user);
-       updateUser.setName("更改后的名字");
+       updateUser.setNickname("更改后的名字");
         return updateUser;
     }
 }

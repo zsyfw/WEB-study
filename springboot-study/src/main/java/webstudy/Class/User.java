@@ -1,41 +1,18 @@
 package webstudy.Class;
 
+import lombok.*;
+
+@Data//集成了@Getter@Setter@EqualsAndHashCode@ToString这四个注解
+@NoArgsConstructor//自动添加无参构造方法
+@AllArgsConstructor//自动添加有参构造方法，添加除static外的所有属性
 public class User {
-    private String name;
-    private Integer age;
+    private Integer id;
+    private String avatar;
+    private String nickname;
+    private String password;
+    private String openid;
+    private String mobile;
 
     private Address address;
 
-    public String getName() {
-        return name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", address=" + address.toString() +
-                '}';
-    }
 }
