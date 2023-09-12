@@ -20,4 +20,12 @@ class SpringbootStudyApplicationTests {
 			System.out.println(user);
 		});
 	}
+	@Test
+	public void insertTest(){
+		User user = new User();
+		user.setNickname("马城");
+		user.setAvatar("http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/avatar/2023-09-03/f407d4a0-0ff3-42fe-9406-3c2a3eb85c6e.png");
+		user.setOpenid("AmKkJxeXrT");
+		user.setMobile("15736459839");
+	}
 }
