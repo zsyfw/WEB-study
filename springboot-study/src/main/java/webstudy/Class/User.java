@@ -13,6 +13,4 @@ public class User {
     private String openid;
     private String mobile;
 
-    private Address address;
-
 }

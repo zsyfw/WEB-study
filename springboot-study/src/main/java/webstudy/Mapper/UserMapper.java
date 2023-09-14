@@ -1,9 +1,6 @@
 package webstudy.Mapper;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import webstudy.Class.User;
 
 import java.util.List;
@@ -13,9 +10,11 @@ public interface UserMapper {
 
     @Select("select * from users")
     public List<User> userList();
-    @Delete("delete from users where openid =#{opid}")
-    public int delete(String opid);
+    @Delete("delete from users where openid =#{openid}")
+    public int deleteUser(String openid);
+
+    @Options(keyProperty = "id",useGeneratedKeys = true)//为传入的对象添加主键值便于返回查看
     @Insert("insert into users (avatar, nickname, password, openid, mobile) " +
             "values (#{avatar},#{nickname},#{password},#{openid},#{mobile})")
-    public int insert(User user);
+    public int insertUser(User user);
 }

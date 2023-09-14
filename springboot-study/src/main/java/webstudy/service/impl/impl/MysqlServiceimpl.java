@@ -6,16 +6,27 @@
  */
 package webstudy.service.impl.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import webstudy.Class.User;
 import webstudy.dao.MysqlDao;
 import webstudy.service.impl.MysqlService;
 
+@Service
 public class MysqlServiceimpl implements MysqlService {
+    @Autowired
     private MysqlDao mysqlDao;
 
 
     @Override
-    public int insert(User user) {
-        return 0;
+    public int insertUser(User user) {
+        int result = mysqlDao.insertUser(user);
+        return result;
+    }
+
+    @Override
+    public int deleUser(String openid) {
+        int result = mysqlDao.deleteUser(openid);
+        return result;
     }
 }

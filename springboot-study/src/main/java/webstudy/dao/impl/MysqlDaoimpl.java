@@ -6,8 +6,28 @@
  */
 package webstudy.dao.impl;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import webstudy.Class.User;
+import webstudy.Mapper.UserMapper;
 import webstudy.dao.MysqlDao;
 
-public class MysqlDaoimpl implements MysqlDao {
+import javax.annotation.Resource;
 
+@Repository
+public class MysqlDaoimpl implements MysqlDao {
+    @Autowired
+    private UserMapper userMapper;
+    @Override
+    public int insertUser(User user) {
+        int result = userMapper.insertUser(user);
+        return result;
+    }
+
+    @Override
+    public int deleteUser(String openid) {
+        int result = userMapper.deleteUser(openid);
+        return result;
+    }
 }
