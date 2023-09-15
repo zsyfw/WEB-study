@@ -10,7 +10,7 @@ public class User {
     private String avatar;
     private String nickname;
     private String password;
-    private String openid;
+    private String openId;
     private String mobile;
 
 }
