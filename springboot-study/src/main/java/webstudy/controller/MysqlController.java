@@ -12,10 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import webstudy.Class.Page;
 import webstudy.Class.User;
 import webstudy.Mapper.UserMapper;
 import webstudy.Result.Result;
 import webstudy.service.impl.MysqlService;
+
+import java.util.List;
 
 @RestController
 public class MysqlController {
@@ -39,5 +42,13 @@ public class MysqlController {
             return Result.success();
         }
         else return Result.error("error");
+    }
+    @RequestMapping("/SelectUserPage")//分页查询用户
+    public Result SelectUserPage(@RequestParam(defaultValue = "1") Integer page,
+                                 @RequestParam(defaultValue = "10") Integer pagesize)//第一个参数是起始页码，第二个参数是每页记录数,默认为1和10
+    {
+        Page pagelist = mysqlService.selectUserPage(page,pagesize);
+
+        return Result.success(pagelist);
     }
 }

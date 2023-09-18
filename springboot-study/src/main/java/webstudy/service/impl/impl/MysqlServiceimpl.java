@@ -6,11 +6,15 @@
  */
 package webstudy.service.impl.impl;
 
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import webstudy.Class.Page;
 import webstudy.Class.User;
 import webstudy.dao.MysqlDao;
 import webstudy.service.impl.MysqlService;
+
+import java.util.List;
 
 @Service
 public class MysqlServiceimpl implements MysqlService {
@@ -29,4 +33,18 @@ public class MysqlServiceimpl implements MysqlService {
         int result = mysqlDao.deleteUser(openid);
         return result;
     }
+
+    @Override
+    public Page selectUserPage(Integer page,Integer pagesize) {
+        PageHelper.startPage(page,pagesize);
+
+        List<User> userList = mysqlDao.selectUserPage();
+        com.github.pagehelper.Page<User> p = (com.github.pagehelper.Page<User>) userList;//强转类型
+
+        Page page1 = new Page(p.getTotal(),p.getResult());
+
+        return page1;
+    }
+
+
 }

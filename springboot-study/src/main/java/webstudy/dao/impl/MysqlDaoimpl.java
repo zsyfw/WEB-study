@@ -14,6 +14,7 @@ import webstudy.Mapper.UserMapper;
 import webstudy.dao.MysqlDao;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Repository
 public class MysqlDaoimpl implements MysqlDao {
@@ -29,5 +30,11 @@ public class MysqlDaoimpl implements MysqlDao {
     public int deleteUser(String openid) {
         int result = userMapper.deleteUser(openid);
         return result;
+    }
+
+    @Override
+    public List<User> selectUserPage() {
+        List<User> userList= userMapper.userList();
+        return userList;
     }
 }
