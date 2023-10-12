@@ -33,6 +33,12 @@ public class MysqlDaoimpl implements MysqlDao {
     }
 
     @Override
+    public int updateNickname(String openid, String nickname) {
+        int result = userMapper.updateNickname(openid , nickname);
+        return result;
+    }
+
+    @Override
     public List<User> selectUserPage() {
         List<User> userList= userMapper.userList();
         return userList;

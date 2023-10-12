@@ -35,6 +35,12 @@ public class MysqlServiceimpl implements MysqlService {
     }
 
     @Override
+    public int updateNickname(String openid, String nickname) {
+        int result = mysqlDao.updateNickname(openid , nickname);
+        return result;
+    }
+
+    @Override
     public Page selectUserPage(Integer page,Integer pagesize) {
         PageHelper.startPage(page,pagesize);
 

@@ -10,5 +10,7 @@ public interface MysqlDao {
 
     public int deleteUser(String openid);
 
+    public int updateNickname(String openid , String nickname);
+
     public List<User> selectUserPage();
 }

@@ -5,7 +5,6 @@
 <mapper namespace="webstudy.Mapper.UserMapper">
 
 
-
     <delete id="deleteList">
         delete  from users where openId in
         <foreach collection="openIds" item="id" separator="," open="(" close=")">

@@ -12,5 +12,6 @@ public class User {
     private String password;
     private String openId;
     private String mobile;
+    private Integer admin;
 
 }
