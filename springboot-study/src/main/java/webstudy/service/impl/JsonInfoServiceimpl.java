@@ -4,16 +4,13 @@
  * @Software: IntelliJ IDEA WEB-study
  * @version 1.0
  */
-package webstudy.service.impl.impl;
+package webstudy.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import webstudy.Class.User;
 import webstudy.dao.JsonInfoDao;
-import webstudy.dao.impl.JsonInfoDaoImpl;
-import webstudy.service.impl.JsonInfoService;
+import webstudy.service.JsonInfoService;
 
 
 //@Component    //表示将当前类交给IOC容器管理，成为IOC容器中的bean

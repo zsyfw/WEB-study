@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import webstudy.Class.Page;
 import webstudy.Class.User;
 import webstudy.Result.Result;
-import webstudy.service.impl.MysqlService;
+import webstudy.service.MysqlService;
 
 @RestController
 public class UserMysqlController {
@@ -57,9 +57,5 @@ public class UserMysqlController {
 
         return Result.success(pagelist);
     }
-    @RequestMapping("/SelectUserPage")
-    public Result SelectNews(){
 
-        return Result.success();
-    };
 }

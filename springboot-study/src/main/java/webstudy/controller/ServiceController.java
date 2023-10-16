@@ -6,10 +6,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import webstudy.Class.User;
 import webstudy.Result.Result;
-import webstudy.service.impl.JsonInfoService;
-import webstudy.service.impl.impl.JsonInfoServiceimpl;
+import webstudy.service.JsonInfoService;
 
-import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;

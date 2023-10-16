@@ -1,4 +1,4 @@
-package webstudy.service.impl;
+package webstudy.service;
 
 import org.springframework.stereotype.Service;
 import webstudy.Class.Page;

@@ -1,4 +1,4 @@
-package webstudy.service.impl;
+package webstudy.service;
 
 import webstudy.Class.User;
 

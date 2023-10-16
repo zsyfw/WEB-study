@@ -6,18 +6,16 @@
  */
 package webstudy.dao.impl;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import webstudy.Class.User;
 import webstudy.Mapper.UserMapper;
 import webstudy.dao.MysqlDao;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Repository
-public class MysqlDaoimpl implements MysqlDao {
+public class MysqlDaoImpl implements MysqlDao {
     @Autowired
     private UserMapper userMapper;
     @Override

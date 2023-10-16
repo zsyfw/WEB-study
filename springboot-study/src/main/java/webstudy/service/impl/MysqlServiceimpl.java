@@ -4,7 +4,7 @@
  * @Software: IntelliJ IDEA WEB-study
  * @version 1.0
  */
-package webstudy.service.impl.impl;
+package webstudy.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import webstudy.Class.Page;
 import webstudy.Class.User;
 import webstudy.dao.MysqlDao;
-import webstudy.service.impl.MysqlService;
+import webstudy.service.MysqlService;
 
 import java.util.List;
 
